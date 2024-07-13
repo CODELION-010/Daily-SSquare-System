@@ -5,7 +5,7 @@ retiro o deposito haciendo que el monto base de operacion se le reste o sume la 
 registrando en base de datos dichos movimientos con los datos, fecha, hora,monto y tipo de operacion.
 
 El sistema usa interfaz por medio de un daschboard
-sistema en deply en
+sistema en deploy en
 https://dailysquaresystem.leonwebtech.com/
 
 FUNCIONALIDADES
