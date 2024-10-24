@@ -1,4 +1,6 @@
-//CONSULTAR REGISTROS
+/* --------------------------------------------------------------------
+* - FUNCION DEL BOTON CONSULTAR REGISTROS
+* -------------------------------------------------------------------- */
 function consultarRegistros() {
     $.ajax({
         url: 'consultar_movimientos.php',

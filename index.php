@@ -49,6 +49,11 @@
         </form>
         <!--formulario para registro-->
         <form action="app/registro_procesar.php" method="post" class="sign-up-form" id="form_registro" >
+        <div class="social-media">
+            <a class="icon-mode" onclick="toggleTheme('dark');"><i class="fas fa-moon"></i></a>
+            <a class="icon-mode" onclick="toggleTheme('light');"><i class="fas fa-sun"></i></a>
+          </div>
+          <p class="text-mode">Cambiar Tema</p>
           <h2 class="title">Registrate</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -88,7 +93,7 @@
       <div class="panel left-panel">
         <div class="content">
           <h3>Aun no tienes cuenta?</h3>
-          <p>Crea tu cuenta e inicia sesion para probar el sistema de registro de operaciones bancarias en su version Beta</p>
+          <p>Crea tu cuenta e inicia sesión para probar el sistema de registro de operaciones bancarias en su version Beta</p>
           <button class="btn transparent" id="sign-up-btn">Registrarse</button>
         </div>
         <img src="img/login_icon.png" class="image" alt="">

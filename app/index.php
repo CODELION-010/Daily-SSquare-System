@@ -14,7 +14,6 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['user_id']) && !isset($_SESSI
           $telefono = $_SESSION['telefono'];
 ?>
 
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -175,7 +174,6 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['user_id']) && !isset($_SESSI
             <div id="Perfil" class="section-content active">
                 <div class="card">
                     <div class="image">
-                 
                             <img class="user-img"
                             src="https://thumbs.dreamstime.com/b/vector-de-icono-perfil-usuario-s%C3%ADmbolo-retrato-avatar-logo-la-persona-forma-plana-silueta-negra-aislada-sobre-fondo-blanco-196482136.jpg"
                             alt="Foto Perfil" title="Click para cambiar foto"                    <button type="button" onclick="subir_foto()">
