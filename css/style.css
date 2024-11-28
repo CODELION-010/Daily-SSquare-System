@@ -270,6 +270,7 @@ form.sign-up-form {
 .social-media {
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .social-icon {

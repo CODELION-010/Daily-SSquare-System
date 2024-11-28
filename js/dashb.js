@@ -69,9 +69,10 @@ function fetchmostrarcupo() {
         url: 'mostrar_monto_base.php',
         method: 'POST',
         success: function(data) {
-            const textoadd = "Cupo actual: ";
-            document.getElementById('mostrar_cupo_actual').innerText = textoadd + data;
-            document.getElementById('mostrar_cupo_actual_perfil').innerText = data;
+            const textoadd = "Cupo actual: $ ";
+            const textoadd1 = "cupo actual $ ";
+            document.getElementById('mostrar_cupo_actual').innerHTML = `<strong>${textoadd}</strong>` + data;
+            document.getElementById('mostrar_cupo_actual_perfil').innerHTML = `<strong>${textoadd1}</strong>` + data;
         },
         error: function(xhr, status, error) {
             console.error('AJAX error:', status, error);
@@ -84,4 +85,73 @@ setInterval(fetchmostrarcupo, 50000);
 // Llama a fetchmostrarcupo cuando se carga la página
 $(document).ready(function() {
     fetchmostrarcupo();
+});
+
+/* --------------------------------------------------------------------
+* - FUNCION MOSTRAR CUPO POR AJAX
+* -------------------------------------------------------------------- */
+
+// Función para manejar el modo oscuro
+function setupDarkMode() {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    
+    // Verificar si hay una preferencia guardada
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        darkModeToggle.checked = true;
+    }
+
+    darkModeToggle.addEventListener('change', () => {
+        if (darkModeToggle.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
+//TAMAÑO DE FUENTE
+
+
+// Función para manejar el tamaño de fuente
+function setupFontSizeControls() {
+    const root = document.documentElement;
+    let currentFontSize = parseInt(getComputedStyle(root).fontSize);
+    
+    document.getElementById('increaseFontBtn').addEventListener('click', () => {
+        if (currentFontSize < 24) { // Límite máximo
+            currentFontSize += 2;
+            root.style.fontSize = `${currentFontSize}px`;
+            localStorage.setItem('fontSize', currentFontSize);
+        }
+    });
+
+    document.getElementById('decreaseFontBtn').addEventListener('click', () => {
+        if (currentFontSize > 12) { // Límite mínimo
+            currentFontSize -= 2;
+            root.style.fontSize = `${currentFontSize}px`;
+            localStorage.setItem('fontSize', currentFontSize);
+        }
+    });
+
+    document.getElementById('defaultFontBtn').addEventListener('click', () => {
+        currentFontSize = 16; // Tamaño por defecto
+        root.style.fontSize = `${currentFontSize}px`;
+        localStorage.setItem('fontSize', currentFontSize);
+    });
+
+    // Cargar tamaño de fuente guardado
+    const savedFontSize = localStorage.getItem('fontSize');
+    if (savedFontSize) {
+        currentFontSize = parseInt(savedFontSize);
+        root.style.fontSize = `${currentFontSize}px`;
+    }
+}
+
+// Inicializar las funciones cuando el documento esté listo
+document.addEventListener('DOMContentLoaded', () => {
+    setupDarkMode();
+    setupFontSizeControls();
 });

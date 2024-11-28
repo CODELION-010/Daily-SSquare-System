@@ -1,0 +1,29 @@
+body {
+    background: url('../img/fondo_reset.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(13, 13, 13, 0.636); /* 50% opaco */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: black;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(18, 18, 19);
+}
+h4 {
+    font-size: 1.5em; 
+    margin: 0%;
+    padding: 0;
+    color: white;
+}
+input {
+    color: white;
+}

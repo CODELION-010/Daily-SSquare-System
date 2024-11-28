@@ -1,0 +1,38 @@
+body {
+    background: url('../img/fondo_key.jpg') no-repeat center center fixed;
+    background-size: cover;
+  
+}
+
+
+.container {
+    text-align: center;
+    color: white;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: rgba(13, 13, 13, 0.636); /* 50% opaco */
+    border: 2px solid #007bff;
+    border-radius: 10px;
+}
+.password-eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+h4 {
+    font-size: 1.5em;
+ 
+}

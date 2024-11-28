@@ -18,7 +18,7 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['user_id']) && !isset($_SESSI
 <html lang="es">
 
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -48,12 +48,12 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['user_id']) && !isset($_SESSI
 </head>
 
 <body>
-      <!--LOADER DE CARGA--> 
-<div id="loader-wrapper">
-  <div id="loader"></div>
-  <div class="loader-section section-left"></div>
-  <div class="loader-section section-right"></div>
-</div>
+    <!--LOADER DE CARGA-->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
 
     <!--MENU DE SECCIONES-->
     <main>
@@ -111,6 +111,7 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['user_id']) && !isset($_SESSI
                 </h4>
                 <img src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/40b7cce2-c289-4954-9be0-938479832a9c"
                     alt="user" />
+
             </div>
 
             <!-- CONTENIDO SECCION REGISTROS -->
@@ -170,59 +171,80 @@ if (!isset($_SESSION['email']) && !isset($_SESSION['user_id']) && !isset($_SESSI
                     </table>
                 </div>
             </div>
+
             <!-- CONTENIDO SECCION PERFIL -->
             <div id="Perfil" class="section-content active">
                 <div class="card">
                     <div class="image">
-                            <img class="user-img"
-                            src="https://thumbs.dreamstime.com/b/vector-de-icono-perfil-usuario-s%C3%ADmbolo-retrato-avatar-logo-la-persona-forma-plana-silueta-negra-aislada-sobre-fondo-blanco-196482136.jpg"
-                            alt="Foto Perfil" title="Click para cambiar foto"                    <button type="button" onclick="subir_foto()">
-                                        
-                                    </button>></img>
-                          
+                            <img class="user-img" 
+                                src="https://thumbs.dreamstime.com/b/vector-de-icono-perfil-usuario-s%C3%ADmbolo-retrato-avatar-logo-la-persona-forma-plana-silueta-negra-aislada-sobre-fondo-blanco-196482136.jpg"
+                                alt="Foto Perfil" title="Click para cambiar foto"
+                                onclick="subir_foto()">                                                
+                         </img> 
                     </div>
 
                     <div class="card_items">
                         <div class="empty-space">
 
-                            <div class="modal" tabindex="-1">
-                            </div>
                             <h2 class="card-title">
-                                <?php echo "$nombre"; ?>
+                                <strong><?php echo "$nombre"; ?></strong>
 
                                 <small>
-                                    <?php echo "$correo"; ?>
+                                    <?php echo "<strong>Email:</strong> $correo"; ?>
                                 </small>
                                 <small>
-                                    <?php echo "Tu Numero de Usuario es: $user_id"; ?>
+                                    <?php echo "<strong>Teléfono:</strong> $telefono"; ?>
                                 </small>
                                 <small>
-                                    <?php echo "Tu Numero Teléfono es: $telefono"; ?>
+                                    <?php echo "<strong>Número de usuario:</strong> $user_id"; ?>
                                 </small>
                             </h2>
 
-                            <div class="card-follow">
-                                <h2 class="box1 box">
-                                    <small>cantidad de movimientos</small>
-                                    <p id="movimientos-count"></p>
-                                </h2>
+                               <h2 class="card-title">
+                             <strong> Registros de Usuario</strong>
+                                <small>
+                               <p id="movimientos-count"></p>  
+                               </small>
+                                                            </small>
+                                <small>
+                                <p id="mostrar_cupo_actual_perfil"></p>
+                                </small>
+                            
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                                <h2 class="box2 box">
-                                    <small>Su Saldo actua es</small>
-                                    <p id="mostrar_cupo_actual_perfil"></p>
-                                    </p>
-                                 </h2>
-                            </div>
+            <!-- CONTENIDO SECCION CONFIGURACION -->
+            <div id="settings" class="section-content active">
+                <!-- Agrega contenido seccion configuracion -->
+                <div class="settings-item">
+                        <h3>Modo Oscuro</h3>
+                        <label class="switch">
+                            <input type="checkbox" id="darkModeToggle">
+                            <span class="slider"></span>
+                        </label>
+                </div>
 
-                            <!-- CONTENIDO SECCION CONFIGURACION -->
-                            <div id="settings" class="section-content active">
-                                <!-- Agrega contenido seccion configuracion -->
-                                <h2>agregar informacion de configuracion</h2>
+                <!-- Control de tamaño de fuente -->
+                <div class="settings-item">
+                    <h3>Tamaño de Fuente</h3>
+                    <div class="font-size-controls">
+                         <button class="btn btn-outline-info" id="decreaseFontBtn">A-</button>
+                         <button class="btn btn-outline-info" id="defaultFontBtn">A</button>
+                         <button class="btn btn-outline-info" id="increaseFontBtn">A+</button>
+                    </div>
+                </div>
 
 
-                            </div>
-                            <!-- ESPACIO PARA AGREGAR MAS SECCIONES AL DASHHBOARD -->
+             </div>
+            </div>
+                              
+
+            <!-- ESPACIO PARA AGREGAR MAS SECCIONES AL DASHHBOARD -->
         </section>
+
     </main>
 
     <script src="../js/datatable.js"></script>

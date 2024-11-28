@@ -40,7 +40,7 @@
           </div>
 
           <input type="submit" value="Iniciar Sesion" class="btn solid">
-
+<a href="app/form_restablecer_pass.php">Recordar Contraseña</a>
           <div class="social-media">
             <a class="icon-mode" onclick="toggleTheme('dark');"><i class="fas fa-moon"></i></a>
             <a class="icon-mode" onclick="toggleTheme('light');"><i class="fas fa-sun"></i></a>

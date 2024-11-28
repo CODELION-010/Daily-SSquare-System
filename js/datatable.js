@@ -79,8 +79,8 @@ function fetchMovimientosCount() {
         url: 'num_movimientos.php',
         method: 'POST',
         success: function(data) {
-            document.getElementById('movimientos-count').innerText = data;
-        },
+            const textoadd = "Total movimientos ";
+            document.getElementById('movimientos-count').innerHTML = `<strong>${textoadd}</strong>`+ data;        },
         error: function(xhr, status, error) {
             console.error('AJAX error:', status, error);
         }

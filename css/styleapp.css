@@ -1,13 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&family=Roboto:wght@300;400;500;700&display=swap");
 
-*,
+
 *::before,
-*::after {
+*::after,* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background: #212140; */
+}
+
+/* --------------------------------------------------------------------
+* > ESTILOS DEL MNEU DASHBOARD
+* -------------------------------------------------------------------- */
 nav {
   user-select: none;
   -webkit-user-select: none;
@@ -24,20 +39,6 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
 }
-
-body {
-  font-family: "Nunito", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/5baf8325-ed69-40b0-b9d2-d8c5d2bde3b0);
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background: #212140; */
-}
-
-/* MAIN MENU */
 main {
   display: grid;
   grid-template-columns: 13% 87%;
@@ -143,10 +144,10 @@ main {
 }
 
 .nav-icon {
- padding-left: 15px;
+  padding-left: 15px;
   font-size: 30px;
   text-align: center;
-  
+
 }
 
 .nav-text {
@@ -157,16 +158,14 @@ main {
   font-size: 20px;
 }
 
-
-
-
-/* INFORMACIO DE USUARIO PARTE SUPERIOR PERMANENTE */
-
+/* --------------------------------------------------------------------
+* > INFORMACIO DE USUARIO PARTE SUPERIOR PERMANENTE
+* -------------------------------------------------------------------- */
 .user-info {
   display: flex;
   align-items: center;
   padding: 0 10px;
-margin-left: 50px;
+  margin-left: 50px;
 }
 
 .icon-container {
@@ -187,7 +186,7 @@ margin-left: 50px;
 @media screen and (max-width: 1500px) {
   main {
     grid-template-columns: 8% 94%;
-  
+
   }
 
   .main-menu h1 {
@@ -206,11 +205,21 @@ margin-left: 50px;
 
 }
 
+/* --------------------------------------------------------------------
+* >ESTILOS RESPONSIVE DASHBOARD
+* -------------------------------------------------------------------- */
 
-/* Media query para dispositivos móviles */
 @media (max-width: 768px) {
-  .main {
-    grid-template-columns: 1fr;
+  main {
+    height: auto;
+    width: auto;
+
+  }
+
+  #tablaContainer,
+  #tabla {
+    width: 1000%;
+    height: auto;
   }
 
   .main-menu {
@@ -230,6 +239,7 @@ margin-left: 50px;
 
   .nav-item {
     display: inline-block;
+
   }
 
   .nav-item a {
@@ -246,37 +256,49 @@ margin-left: 50px;
   .nav-text {
     display: none;
   }
-
+body{
+  width: max-content;
+  height: max-content;
+}
   .content {
     margin-top: 0px;
-    width:100px;
-    display: block !important;
+    height: 1000px;
+    width: max-content;
   }
 
   .user-info {
     display: none;
   }
-.logo{
-  display: none;
+
+  .logo {
+    display: none;
+  }
+
+  #home,
+  #Consultas,
+  #Perfil,
+  #settings {
+    width: 500px;
+    height: max-content;
+    flex-flow: column;
+    /* padding: unset; */
+    margin-top: 70px;
+
+  }
 }
-#home,
+
+/*FIN RESPONSIVE*/
+
+/* --------------------------------------------------------------------
+* >ESTLOS FORMULARIOS DE REGISTROS Y OCULTAMIENDO DE SECCIONES
+* -------------------------------------------------------------------- */
+
 #Consultas,
 #Perfil,
 #settings {
-  width: 400px;
-  display: block;
-}
-
-
-}
-/*OCULTAR CONTENIDO DE OTRAS SECCIONES*/
-#Consultas,
-#Perfil,
-#settings {
   display: none;
 }
 
-/*estilos formulario*/
 #mont_base,
 #reg_retiro,
 #reg_deposito {
@@ -290,35 +312,44 @@ margin-left: 50px;
   box-shadow: 0px 0px 20px 0px rgba(9, 9, 9, 0.775);
   margin: 2% 1% 2% 1%;
 }
+
 #monto_base,
 #monto_retiro,
-#monto_deposito{
+#monto_deposito {
   width: 100%;
   height: 40px;
+  text-align: center;
+  font-size: 35px;
+  text-shadow: 2px 2px 2px #060606;
 }
 
-#home{
+#home {
   display: flex;
 }
 
 .section-content {
   width: auto;
-  height: 600px; /* Establecer una altura fija para todas las secciones */
-  overflow: hidden; /* Evitar que el contenido desborde si excede la altura */
+  height: 600px;
+  /* Establecer una altura fija para todas las secciones */
+  overflow: hidden;
+  /* Evitar que el contenido desborde si excede la altura */
 }
+/* --------------------------------------------------------------------
+* >ESTILOS BOTONOES
+* -------------------------------------------------------------------- */
 
 .btn-outline-info {
   display: block;
   padding: 8px 24px;
   margin: 10px auto;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-weight: 500;
   outline: none;
   text-decoration: none;
   color: #484b57;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(12, 12, 12, 0.3);
   border-radius: 25px;
   cursor: pointer;
 }
@@ -333,16 +364,20 @@ margin-left: 50px;
 
 
 @keyframes gelatine {
+
   0%,
   100% {
     transform: scale(1, 1);
   }
+
   25% {
     transform: scale(0.9, 1.1);
   }
+
   50% {
     transform: scale(1.1, 0.9);
   }
+
   75% {
     transform: scale(0.95, 1.05);
   }
@@ -352,7 +387,7 @@ margin-left: 50px;
 * - ESTILOS DATATABLES
 * -------------------------------------------------------------------- */
 /*ESTILOS BONONES CONSULTAS*/
-.butons_cons_content{
+.butons_cons_content {
   display: flex;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgb(73, 57, 113);
@@ -361,150 +396,139 @@ margin-left: 50px;
 /* Estilos para la tabla */
 #tablaContainer,
 #tabla {
-margin-right:2px;;
-  width:100%;
+  margin-right: 2px;
+  ;
+  width: 100%;
   height: auto;
-  font-size: 15px; /* Tamaño de fuente */
+  font-size: 1.2em;
+  /* Tamaño de fuente */
 }
 
 /* Estilos para las celdas de la tabla */
 #tabla th,
 #tabla td {
-  padding: 8px; /* Espaciado interno de las celdas */
+  padding: 8px;
 }
 
 /* Estilos para el encabezado de la tabla */
 #tabla th {
   font-size: 22px;
-  background-color: rgb(73, 57, 113); /* Color de fondo del encabezado */
-  color: #fff; /* Color del texto del encabezado */
+  background-color: rgb(73, 57, 113);
+  /* Color de fondo del encabezado */
+  color: #fff;
+  /* Color del texto del encabezado */
 }
 
 /* Estilos para las filas impares */
 #tabla tr:nth-child(odd) {
-  background-color: #f2f2f2; /* Color de fondo de las filas impares */
+  background-color: #f2f2f2;
+  /* Color de fondo de las filas impares */
 }
-#tabla tr{
+
+#tabla tr {
   transition: all 0.25s ease;
 }
+
 /* Estilos al pasar el cursor sobre las filas */
 #tabla tr:hover {
   background-color: rgb(73, 57, 113);
   color: #fff;
-  font-size: 22px;
+  font-size: 1.3em;
   font-weight: bold;
   transition: all 0.55s ease;
   border: 2px solid #ffffff;
-  cursor:default ;
+  cursor: default;
 }
 
 /* --------------------------------------------------------------------
 * - ESTILOS SECCION PERFIL DE USUARIO
 * -------------------------------------------------------------------- */
-
 img {
   width: 100%;
   height: auto;
-  display: block;
-}
 
+}
 .card {
- width: 100%;
+  width: 98%;
   position: relative;
   overflow: hidden;
   box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.4);
   border-radius: 20px;
+  margin: 1%;
 }
+
 .card .image {
-  height: 80px;
+  height: 20vh;
+  width: 98%;
   background: url(../img/fondo_app.jpg);
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
+  z-index: 10;
   flex-flow: column;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
 }
+
 .user-img {
   width: 7em;
   transform: translateY(45%);
   border-radius: 50%;
-  box-shadow: 0px 0.5rem 1rem 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 0.5rem 1rem 0px rgba(0, 0, 0, 0.4);
   transition: all 0.5s ease-out;
 }
+
 .user-img:hover {
-  transform: scale(1.1) translateY(30%);
-  box-shadow: 0px 0.5rem 1rem 0px rgba(0,0,0,0.2);
+  transform: scale(1.5) translateY(30%);
+  box-shadow: 0px 0.5rem 1rem 0px rgba(0, 0, 0, 0.2);
 }
-..user-img-button{
-  background-color: #000;
-}
+
 .empty-space {
-  padding: 1em;
+  padding: 1rem 1.5rem;
   position: relative;
+  display:flex;
 }
-.card_items {
-  background-color: white;
-  display: flex;
-  flex-flow: column;
-}
+
 .card-title {
+  margin: 1%;
+  box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.4);
+  background-color: #f0f0f0;
+  border-radius: 20px;
   display: flex;
   flex-flow: column;
-  align-items: center;
-  padding: 1.5em 0 0;
+  padding: 1rem 1.5rem;;
+  width: 50%;
+  font-size: 2.5em;
+  font-weight: bold;
 }
-.card_items .card-title p{
-  text-align: center;
-  color: black;
-  font-size: 1.1em;
-}
+
 .card-title small {
-  font-size: 0.7em;
   color: rgba(0, 0, 0, 0.6);
+  font-size: 0.6em;
 }
-.card-follow {
-  margin: 1em 0;
+
+
+/* --------------------------------------------------------------------
+* - ESTILOS SECCIÓN CONFIGURACIÓN
+* -------------------------------------------------------------------- */
+
+.settings{
   display: flex;
-  justify-content: center;
 }
-.box {
-  padding: 0.8rem 1.5rem;
-  display: flex;
-  flex-flow: column;
-  text-align: center;    
+.settings-item{
+  box-shadow: 0px 1rem 1.5rem rgba(0, 0, 0, 0.4) !important;
+
+  margin: 15px;
+  width: 50%;
+  height: 30%;
 }
-.box p {
-  font-size: 1.5em;
-  font-weight: lighter;
-  color: #f48c06;
+.btn btn-outline-info{
+ background-color: #000;
+
 }
-.box small {
-  font-size: 0.85rem;
-  
-}
-.boton {
-  width: 70%;
-  margin: 0 auto 1em;
-  padding: 1em;
-  border-radius: 25px;
-  border: none;
-  outline: none;
-  background: #faa307;
-  color: white;
-  font-size: 1em;
-  cursor: pointer;
-  transition: ease-out .2s;
-}
-.boton:hover {
-  width: 80%;
-  background-color: #f77f00;
-  transform: scale(1.1);
-}
-.paragraph {
-  padding: 0 1.7em 1.5em;
-}
+
 /* --------------------------------------------------------------------
 * - ESTILOS LOADER DE CARGA
 * -------------------------------------------------------------------- */
@@ -533,15 +557,6 @@ img {
   /* Chrome, Opera 15+, Safari 5+ */
   animation: spin 2s linear infinite;
   /* Chrome, Firefox 16+, IE 10+, Opera */
-  z-index: 1001;
-}
-
-#loader-logo {
-  display: block;
-  position: absolute;
-  left: 48%;
-  top: 46%;
-  background: url(../img/login_icon.png) no-repeat center center;
   z-index: 1001;
 }
 
@@ -586,6 +601,7 @@ img {
     transform: rotate(0deg);
     /* Firefox 16+, IE 10+, Opera */
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     /* Chrome, Opera 15+, Safari 3.1+ */
@@ -605,6 +621,7 @@ img {
     transform: rotate(0deg);
     /* Firefox 16+, IE 10+, Opera */
   }
+
   100% {
     -webkit-transform: rotate(360deg);
     /* Chrome, Opera 15+, Safari 3.1+ */
@@ -637,10 +654,7 @@ img {
 #loader-wrapper .loader-section.section-right {
   right: 0;
 }
-
-
 /* Loaded */
-
 .loaded #loader-wrapper .loader-section.section-left {
   -webkit-transform: translateX(-100%);
   /* Chrome, Opera 15+, Safari 3.1+ */
@@ -681,13 +695,142 @@ img {
   transition: all 0.3s 1s ease-out;
 }
 
-
 /* JavaScript Turned Off */
-
 .no-js #loader-wrapper {
   display: none;
 }
 
 .progress {
   background-color: rgba(255, 64, 129, 0.22);
+}
+/*FIN LOADER*/
+
+
+/* --------------------------------------------------------------------
+* >ESTILOS BOTON MODO OBSCURO
+* -------------------------------------------------------------------- */
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: .5s;
+}
+
+input:checked+.slider {
+  background-color: #522ba7;
+}
+
+input:checked+.slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+/*FIN*/
+
+/* --------------------------------------------------------------------
+* >ESTILOS MODO OBSCURO GENERAL
+* -------------------------------------------------------------------- */
+
+/* Estilos para el modo oscuro */
+:root {
+  --background-color: #151414;
+  --text-color: #000000;
+  --card-background: #f0f0f0;
+  --menu-background: rgb(73, 57, 113);
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  --card-background: #2d2d2d;
+  --menu-background: #1f1f1f;
+  --section-content: #1f1f1f;
+  --user-info:#1f1f1f;
+  --content: #1f1f1f;
+}
+
+/* Aplicar variables CSS */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}
+
+.main-menu {
+  background: var(--menu-background);
+}
+.content{
+  background: var(--content);
+}
+.section-content{
+  background: var(--section-content);
+  color: var(--text-color);
+}
+.user-info{
+  background-color:var(--user-info);
+}
+.card {
+  background-color: var(--card-background);
+}
+
+/* Estilos para la sección de configuración */
+.settings-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.settings-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--card-background);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.font-size-controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.font-size-controls button {
+  padding: 5px 15px;
+  min-width: 60px;
 }
